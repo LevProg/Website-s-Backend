@@ -36,11 +36,10 @@ namespace SomeGoroscopes.Controllers
                
                     }
              
-       public IActionResult WatchToday(int? id)
+       public IActionResult WatchToday(int? id)//get random prediction for the day
        {
             
                         if (id == null) return RedirectToAction("Index");
-          
                         int SomeId = Convert.ToInt32(id);
                         DateTime date = DateTime.Today;
                         int today = date.Day;
@@ -51,7 +50,7 @@ namespace SomeGoroscopes.Controllers
                         ViewBag.Prediction = str;
             return View();
         }
-       public IActionResult WatchMonth(int? id)
+       public IActionResult WatchMonth(int? id)//get random prediction for the month
         {
             if (id == null) return RedirectToAction("Index");
             int SomeId = Convert.ToInt32(id);
