@@ -13,14 +13,17 @@ namespace SomeGoroscopes.Controllers
     public class HomeController : Controller
     {
         HoroscopeContext db;
+        
         public HomeController(HoroscopeContext context)
         {
             db = context;
         }
+        
         public IActionResult Index()
         {
             return View();
         }
+        
         public ActionResult Watch1(int? id)
         {
             if (id == null) return RedirectToAction("Index");
@@ -50,6 +53,7 @@ namespace SomeGoroscopes.Controllers
                         ViewBag.Prediction = str;
             return View();
         }
+        
        public IActionResult WatchMonth(int? id)//get random prediction for the month
         {
             if (id == null) return RedirectToAction("Index");
@@ -63,7 +67,7 @@ namespace SomeGoroscopes.Controllers
             ViewBag.MonthPrediction = str;
             return View();
         }
-
+        
         public IActionResult About()
         {
             return View();
